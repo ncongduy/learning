@@ -2,4 +2,5 @@
 
 - linux: [networking](./linux/networking.md)
 - linux: [package manager](./linux/package-manager.md)
-- linux: [working with hardware](./linux/working-hardware.md)
+- linux: [hardware](./linux/hardware.md)
+- linux: [system](./linux/working-hardware.md)
