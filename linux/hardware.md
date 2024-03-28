@@ -22,5 +22,22 @@ dmesg
 # print usb information
 dmesg | grep -i usb
 
-# continue: Linux-Basics-*.pdf => slide 59
+# udev management tool
+udevadm info --query=path --name=/dev/sda5
+udevadm monitor
+
+# list PCI devices
+lspci
+
+# display CPU architecture
+lscpu
+
+# list the ranges of available memory
+lsmem
+
+# display amount of free and used memory
+free -h
+
+# list hardware
+lshw
 ```
