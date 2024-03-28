@@ -1,6 +1,8 @@
 ## Table of contents
 - systemd
 - file
+- compress files
+- search files
 
 ----------------------------------------------------------------------
 ## Contents
@@ -19,7 +21,7 @@ systemctl set-default multi-user.target
 systemctl set-default graphical.target
 ```
 
--file
+- file
 ```bash
 # check file type
 file <name_of_file>
@@ -38,7 +40,10 @@ block device        => b
 # viewing file size
 du -sh <file_name>
 du -h --max-depth=1 .
+```
 
+- compress files
+```bash
 # archiving files
 tar -cf test.tar file1 file2 file3
 tar -zcf test.tar file1 file2 file3
@@ -58,3 +63,14 @@ gunzio <file_name>
 unxz <file_name>
 ```
 
+- search files
+```bash
+locate <file_name>
+# EX: locate city.txt
+
+find <path> -name <file_name>
+# EX: find /home/ncd -name city.txt
+
+grep -rin "content" <path>
+# EX: grep -rin "abc" .
+```
