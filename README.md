@@ -5,3 +5,4 @@
 - linux: [hardware](./linux/hardware.md)
 - linux: [system](./linux/system.md)
 - linux: [virtual machine](./linux/virtual-machine.md)
+- linux: [permission](./linux/permission.md)
