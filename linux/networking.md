@@ -5,6 +5,7 @@
 - how to create an user
 - how to connect 2 Ubuntu laptops
 - using scp
+- troubleshooting
 
 ----------------------------------------------------------------------
 ## Contents
@@ -118,4 +119,25 @@ scp -pr /home/ncd/media/ server:/home/ncd
 
 # copy from server to local
 scp server:/home/ncd/<file_name> /home/ncd
+```
+
+- troubleshooting
+```bash
+# check interfaces at local
+ip link
+
+# check DNS resolution at local
+nslookup <DNS server>
+
+# check connectivity at local
+ping <name_server>
+
+# check route at local
+traceroute <IP_address>
+
+# check service at server
+netstat -an | grep | grep -i LISTEN
+
+# star up interface
+ip link set dev <interface> up
 ```
