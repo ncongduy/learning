@@ -1,12 +1,12 @@
 ## Table of contents
-- security
+- check info
 - managing users
 - permission files
 
 ----------------------------------------------------------------------
 ## Contents
 
-- security
+- check info
 ```bash
 # check group
 cat /etc/group
