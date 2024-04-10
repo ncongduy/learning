@@ -8,3 +8,4 @@
 - [permission](./permission.md)
 - [iptables](./iptables.md)
 - [cronjob](./cronjob.md)
+- [storage](./storage.md)
