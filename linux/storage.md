@@ -40,3 +40,15 @@ df -hP | grep /dev/<name_disk>
 echo "/dev/<name_disk> /mnt/ext4 ext4 rw 0 0" >> /etc/fstab
 ```
 
+- NFS
+```bash
+# export all mount defined in /etc/exports
+exportfs -a
+
+# manually export a directory
+exportfs -o <client_IP>:/software/repos
+
+# mount NFS directory on local directory
+mount <NFS_server_IP>:/software/repos /mnt/software/repos
+```
+
