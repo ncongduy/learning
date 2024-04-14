@@ -1,3 +1,10 @@
+## Table of content
+- block device is a type of file
+- NFS
+- LVM
+
+--------------------------------
+
 ## Content
 
 - block device is a type of file
@@ -52,3 +59,47 @@ exportfs -o <client_IP>:/software/repos
 mount <NFS_server_IP>:/software/repos /mnt/software/repos
 ```
 
+- LVM
+```bash
+# instal LVM
+sudo apt install lvm2
+
+# create a physical volume
+pvcreate /dev/<name_disk>
+
+# create a volume group
+vgcreate <name_volume_group> /dev/<name_disk>
+
+# see detail physical volume 
+pvdisplay
+
+# see detail volume group
+vgdisplay
+
+# create a logical volume
+lvcreate -L 1G -n <name_lv> <name_volume_group>
+
+# see detail logical volume
+lvdisplay
+
+# list the volumes
+lvs
+
+# create filesystem of volume
+mkfs.ext4 /dev/<name_volume_group>/<name_lv>
+
+# mount volume
+mount -t ext4 /dev/<name_volume_group>/<name_lv> /mnt/vol1
+
+# check volume group
+vgs
+
+# resize logical volume
+lvresize -L +1G -n /dev/<name_volume_group>/<name_lv>
+
+# resize filesystem
+resize2fs /dev/<name_volume_group>/<name_lv>
+
+# check size 
+df -hP /mnt/vol1
+```
