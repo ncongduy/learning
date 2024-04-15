@@ -30,13 +30,14 @@ Documentation=http://wiki.myproject/project-name
 After=postgresql.service
 
 [Service]
-ExecStart= /bin/bash <path_file>
+ExecStart=/bin/bash <path_file>
+WorkingDirectory=<path_project>
 User=project_name
 Restart=on-failure
 RestartSec=10
 
 [Install]
-WantedBy graphical.target
+WantedBy=graphical.target
 """
 
 # start service
@@ -60,7 +61,7 @@ systemctl reload docker
 systemctl status docker
 
 # persistent across rebot
-systemctl enable docker
+systemctl enable --now docker
 
 # disable service
 systemctl disable docker
