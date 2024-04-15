@@ -82,17 +82,20 @@ lvcreate -L 1G -n <name_lv> <name_volume_group>
 # see detail logical volume
 lvdisplay
 
-# list the volumes
+# list physical volume
+pvs
+
+# list volume group
+vgs
+
+# list the logical volume
 lvs
 
-# create filesystem of volume
+# create filesystem of logical volume
 mkfs.ext4 /dev/<name_volume_group>/<name_lv>
 
-# mount volume
+# mount logical volume
 mount -t ext4 /dev/<name_volume_group>/<name_lv> /mnt/vol1
-
-# check volume group
-vgs
 
 # resize logical volume
 lvresize -L +1G -n /dev/<name_volume_group>/<name_lv>
@@ -102,4 +105,14 @@ resize2fs /dev/<name_volume_group>/<name_lv>
 
 # check size 
 df -hP /mnt/vol1
+
+# summary of LVM
+"""
+volume group contains many physical volume.
+create logical volume from volume group.
+mount logical volume directory. 
+resize logical volume without unmount.
+
+pv => vg => lv => /mnt/<name_dr>
+"""
 ```
