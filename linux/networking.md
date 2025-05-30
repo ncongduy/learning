@@ -6,6 +6,7 @@
 - how to connect 2 Ubuntu laptops
 - using scp
 - troubleshooting
+- tailscale (VPN)
 
 ----------------------------------------------------------------------
 ## Contents
@@ -140,4 +141,21 @@ netstat -an | grep | grep -i LISTEN
 
 # star up interface
 ip link set dev <interface> up
+```
+
+- tailscale
+```bash
+# Install tailscale on both laptop and desktop
+curl -fsSL https://tailscale.com/install.sh | sh
+
+# Login tailscale on both laptop and desktop
+sudo tailscale up
+
+# Authenticate on browser
+
+# Get IP of desktop
+tailscale ip -4
+
+# ssh to desktop
+ssh username@IP
 ```
