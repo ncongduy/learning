@@ -112,20 +112,23 @@ ssh <name_server>
 
 - using scp
 ```bash
-# copy from local to server
-scp /home/ncd/<file_name> server:/home/ncd
+# copy a file from local to server
+scp /home/ncd/<file_name> <username>@<name_server>:/home/ncd
 
 # copy directory from local to server
-scp -pr /home/ncd/media/ server:/home/ncd
+scp -pr /home/ncd/media/ <username>@<name_server>:/home/ncd
 
 # copy from server to local
-scp server:/home/ncd/<file_name> /home/ncd
+scp <username>@<name_server>:/home/ncd/<file_name> /home/ncd
 ```
 
 - troubleshooting
 ```bash
 # check interfaces at local
 ip link
+
+# show interface
+ip link show <interface>
 
 # check DNS resolution at local
 nslookup <DNS server>
@@ -136,10 +139,13 @@ ping <name_server>
 # check route at local
 traceroute <IP_address>
 
-# check service at server
-netstat -an | grep | grep -i LISTEN
+# check service at server - option 1
+netstat -an | grep -i LISTEN
 
-# star up interface
+# check service at server - option 2
+ss -ltn
+
+# start up interface
 ip link set dev <interface> up
 ```
 
