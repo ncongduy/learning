@@ -21,6 +21,10 @@
 - ping <url>
 - nslookup <url>
 - dig <url>
+
+# find public IP address of your machine
+curl -s https://ipinfo.io/ip
+curl -s https://api.ipify.org
 ```
 
 - switching & routing
